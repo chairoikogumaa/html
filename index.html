@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./w3css-master/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title> home</title>
     <style>
         *{
             font-family : "맑은 고딕", Arial, Helvetica, sans-serif;
+            line-height: 150%;
         }
+        body{max-width: 980px; margin: 0 auto;}
         header h1{display: inline;}
         header img{height: 100px;}
         ul{list-style-type: none;}
         a{text-decoration: none;}
+        nav { background-color: #f59241;}
         nav ul {
             text-align: center ;
-            border-top: 2px solid #f59241;
-            border-bottom: 2px solid #f59241;
+            border-top: 1px solid #f59241;
+            border-bottom: 1px solid #f59241;
             padding: 15px 10px;
         }
         nav ul li{
@@ -25,17 +31,81 @@
             letter-spacing: 5px;
         }
         nav ul li:hover {
-            background-color: #f59241;
+            background-color: white;
         }
         nav li a:hover{
-            color: white;
+            color: #f59241;
         }
+        section{ display: flex;}
+        header, footer{
+            background-color: #eebf99;
+            height: 150px;
+            text-align: center;
+            font-size: medium;
+        }
+        article, aside, nav{
+            height: calc(100vh-200px);}
+        article{flex: 3; display: inline-block;}
+        aside{flex: 1;}
+        img {align-items: center;}
+        .link { display: inline;}
 
+        div.gallery {
+            margin: 1%;
+            display: inline-block;
+            border: 1px solid #ccc;
+            width: 250px;
+        }
+        div.gallery img {
+        width: 100%;
+        height: auto;
+        }
+        div.desc {
+        padding: 15px;
+        text-align: center;
+        }
+        div.linkk{
+            display: inline-block;}
+
+        .pagination { display: inline-block;}
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;}
+        .top{
+            position: fixed; 
+            bottom: 40px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background-color: #f59241;
+            text-align: center;
+            padding: 10px 0; 
+            
+        }
+        .bottom{
+            position: fixed; 
+            bottom: 0px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background-color: #f59241;
+            text-align: center;
+            padding: 10px 0; 
+            
+        }
+        .mySlides1 {display:none;}
+        .mySlides2 {display:none;}
+        .in { text-indent: 30px; }
     </style>
     
+    
 </head>
-<body>
-    <header>
+<body class="w3-content w3-margin-topmiddle" style="max-width:950px">
+    <header class="w3-padding-24 w3-container w3-large w3-margin-top w3-text-white" id="header">
         <h1> solhi site </h1> 
     </header>
     <nav>
@@ -46,66 +116,282 @@
             <li><a href="#contact">contact</a></li>
         </ul>
     </nav>
-    <section>
-        <div id="photo">
-            <img src="./images02/me.jpg" alt="me"> <br>
-            <h2>좋아하는 오디오</h2>
-            <audio controls autoplay loop src="./media/music01.mp3" ></audio>
-            <h2>환경을 사랑합시다</h2>
-            <video width="50%" height="50%" controls autoplay loop src="./media/movie.mp4"></video>
-            <hr>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/SgRCajKgU8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <hr>
-            <iframe src="./2week/start.html" frameborder="0" width="70%" height="240px" >
-                지원되지 않는 브라우저입니다.
-
-            </iframe>
-
-        </div>
-        <div id="profile">
-            <h2>solhi Profile</h2>
-            <table border="1">
-                <tr>
-                    <th>일자</th>
-                    <th>내용</th>
-                    <th>구분</th>
-                </tr>
-                <tr>
-                    <td>현재</td>
-                    <td>동아대학교 경영정보학과 재학</td>
-                    <td>2학년</td>
-                </tr>
-                <tr>
-                    <td>21.6~21.7</td>
-                    <td>미국대학 한국인 교수로부터 배우는 R 기초 텍스트 마이닝</td>
-                    <td>학습자</td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-            </table>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br>
-    <div id="link">
-            <!--문서간이동-->
-            <a href="http://www.donga.ac.kr" target="_blank"> 동아대학교</a><br>
-            <a href="http://www.naver.com" target="_self">네이버</a><br>
-            <a href="./2week/start.html">start 페이지이동</a><br>
-            <!--문서내 이동-->
-            <a href="#photo"> 사진으로 이동</a>
+    <div class="top w3-text-white">
+        <a href="#header">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
     </div>
-    <div id="login">
-        <form action="#" method="POST">
-            ID : <input type="text" name="name"><br>
-            PASSWORD : <input type="password" name="pass" id="pass"><br>
-            <input type="submit" value="확인">
-            <input type="reset" value="취소">
+    <div class="bottom w3-text-white">
+        <a href="#contact">
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </a>
+    </div>
+    <section class="w3-container">
+        <article class="w3-row w3-large w3-margin-top">
+            <div id="photo" class="w3-container">
+                <h2 id='about' class="w3-xxlarge w3-text-orange"> about </h2>
+                <div class="w3-center"><img src="./images02/me.jpg" alt="me" width="50%" height="50%"> </div>
+                <br>
+                <table class="w3-table-all w3-centered w3-medium" border="1">
+                    <tr>
+                        <td>이름</td>
+                        <td>박솔희</td>
+                    </tr>
+                    <tr>
+                        <td>학교</td>
+                        <td>동아대학교 경영정보학과</td>
+                    </tr>
+                    <tr>
+                        <td>학번</td>
+                        <td>2016654</td>
+                    </tr>
+                    <tr>
+                        <td>학년</td>
+                        <td>2학년</td>
+                    </tr>
+                    <tr>
+                        <td>주소지</td>
+                        <td>부산</td>
+                    </tr>
+                    <tr>
+                        <td>생년월일</td>
+                        <td>20010512</td>
+                    </tr>
+                </table>
+                <br>
+                </div>
+                <br>
+                <div>
+                    <h2 class="w3-xxlarge w3-text-orange"> audio </h2>
+                    <audio controls autoplay loop src="./media/music01.mp3" ></audio>
+                    <h2 class="w3-xxlarge w3-text-orange"> media</h2>
+                    <video class="w3-col s6 w3-border" width="300" height="250" controls autoplay loop src="./media/movie.mp4"></video>
+                    <iframe class="w3-col s6 w3-border" width="300" height="250" src="https://www.youtube.com/embed/c9RzZpV460k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <hr><br><br>
+                    <div id="gg" class="w3-col 12 w3-margin-top">
+                        <div class="gallery">
+                            <a target="_blank" href="./images02/01.jpg">
+                              <img src="./images02/01.jpg" alt="Cinque Terre" width='300' height='300'>
+                            </a>
+                            <div class="desc"> 우리 집 강아지입니다</div>
+                        </div>
+                        <div class="gallery">
+                            <a target="_blank" href="./images02/02.jpg">
+                              <img src="./images02/02.jpg" alt="Cinque Terre" width='300' height='300'>
+                            </a>
+                            <div class="desc"> 이름은 감자입니다</div>
+                        </div>
+                    <iframe class="w3-col s12 w3-border" src="./2week/start.html" frameborder="0" width="70%" height="240px" >
+                        지원되지 않는 브라우저입니다.</iframe>
+                </div>
+            </div>
+            <div id="profile" class="w3-container">
+                <h2 class="w3-xxlarge w3-text-orange">solhi Profile</h2>
+                <table class="w3-table-all w3-centered w3-medium" border="1">
+                    <tr>
+                        <th>일자</th>
+                        <th>내용</th>
+                        <th>구분</th>
+                    </tr>
+                    <tr>
+                        <td>현재</td>
+                        <td>동아대학교 경영정보학과 재학</td>
+                        <td>2학년</td>
+                    </tr>
+                    <tr>
+                        <td>21.6~21.7</td>
+                        <td>미국대학 한국인 교수로부터 배우는 R 기초 텍스트 마이닝</td>
+                        <td>학습자</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            <br> 
+            <div id="timetable" class="w3-container">
+                <h2 class="w3-xxlarge w3-text-orange"> time table</h2>
+                <table class="w3-table-all w3-centered w3-medium" border="1">
+                    <caption>2021년 2학기 시간표</caption>  
+                    <tr>
+                        <td></td>
+                        <td>월</td>
+                        <td>화</td>
+                        <td>수</td>
+                        <td>목</td>
+                        <td>금</td>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>빅데이터 분석</td>
+                        <td></td>
+                        <td>Communication English</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10:30</td>
+                        <td>Communication English</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>매체로읽는우리고전</td>
+                        <td></td>
+                        <td>매체로읽는우리고전</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>웹프로그래밍</td>
+                        <td></td>
+                        <td></td>
+                        <td>웹프로그래밍</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15:00</td>
+                        <td></td>
+                        <td></td>
+                        <td>데이터베이스시스템</td>
+                        <td></td>
+                        <td>데이터베이스시스템</td>
+                    </tr>
+                    <tr>
+                        <td>16:30</td>
+                        <td></td>
+                        <td>빅데이터 분석</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+
+            <div>
+            <h2 class="w3-xxlarge w3-text-orange" id="portfolio">Portfolio</h2>
+
+            <div class="w3-content w3-display-container">
+                <img class="mySlides1" src="./images02/001.png" style="width:100%">
+                <img class="mySlides1" src="./images02/002.png" style="width:100%">
+                <img class="mySlides1" src="./images02/003.png" style="width:100%">
+                <img class="mySlides1" src="./images02/004.png" style="width:100%">
+                <img class="mySlides1" src="./images02/005.png" style="width:100%">
+                <img class="mySlides1" src="./images02/006.png" style="width:100%">
+                <img class="mySlides1" src="./images02/007.png" style="width:100%">
+                <img class="mySlides1" src="./images02/008.png" style="width:100%">
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+            <H6 class="w3-small in">2021년 1학기 서비스기획및UX/UI디자인 과제</H6>
+            <br>
+            <div class="w3-content w3-display-container">
+                <img class="mySlides2" src="./images02/009.png" style="width:100%">
+                <img class="mySlides2" src="./images02/010.png" style="width:100%">
+                <img class="mySlides2" src="./images02/011.png" style="width:100%">
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs2(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs2(1)">&#10095;</button>
+            </div>
+            <H6 class="w3-small in">2021년 1학기 서비스기획및UX/UI디자인 조별과제</H6>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+                
+                function plusDivs(n) {
+                  showDivs(slideIndex += n);
+                }
+                
+                function showDivs(n) {
+                  var i;
+                  var x = document.getElementsByClassName("mySlides1");
+                  if (n > x.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = x.length}
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                  }
+                  x[slideIndex-1].style.display = "block";  
+                }
+
+                var slideIndex2 = 1;
+                showDivs2(slideIndex2);
+
+                function plusDivs2(n) {
+                showDivs2(slideIndex2 += n);
+                }
+
+                function showDivs2(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides2");
+                    if (n > x.length) {slideIndex2 = 1}
+                    if (n < 1) {slideIndex2 = x.length}
+                    for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                    }
+                    x[slideIndex2-1].style.display = "block";  
+                    }
+                </script>
+            </div>
+            <br>
+            <div class="w3-center">
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#">&raquo;</a>
+                  </div>
+            </div>
             
-        </form>
-    </div>
+        </article>
+        
+        <aside id="login">
+            <form action="#" method="POST">
+                ID : <input class="w3-input w3-border" type="text" name="name" ><br>
+                PASSWORD : <input class="w3-input w3-border" type="password" name="pass" id="pass"><br>
+                <input class="w3-orange w3-border-0" type="submit" value="확인">
+                <input class="w3-orange w3-border-0" type="reset" value="취소">
+            </form>
+            <br>
+            <br><br><br><br><br><br><br><br><br><br>
+            <div id="linkk" class="w3-container w3-margin w3-small w3-center">
+                 <!--문서간이동-->
+                <button class="w3-margin-bottom">
+                    <a href="http://www.donga.ac.kr" target="_blank"> 동아대학교</a>
+                </button>
+                <button class="w3-margin-bottom">
+                    <a href="http://www.naver.com" target="_self">네이버</a>
+                </button>
+                <button class="w3-margin-bottom">
+                    <a href="./2week/start.html">start 페이지이동</a>
+                </button class="w3-margin-bottom">
+                <!--문서내 이동-->
+                <button class="w3-margin-bottom">
+                    <a href="#photo"> 사진으로 이동</a>
+                </button>
+            </div>
+        </aside>
     </section>
-    <footer> &copy; solhui park</footer>
+    <footer id='contact' class="w3-margin-top"> &copy; 박솔희
+        <div class="w3-row">
+            <div class="w3-col s6 w3-container"">
+                <h5> Contact</h5>
+                <ul>
+                 <li>Phone : 010 **** ****</li>
+                 <li>Email : ouosolhi512@donga.ac.kr</li>
+                </ul>
+            </div>
+            <div class="w3-col s6 w3-container"">
+                <h5> Follow </h5>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook" style="font-size:30px;color:white"></i></a>
+                <a href="https://twitter.com/"><i class="fa fa-twitter" style="font-size:30px;color:white"></i></a>
+                <a href="https://www.instagram.com/qth.12"><i class="fa fa-instagram" style="font-size:30px;color:white"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
